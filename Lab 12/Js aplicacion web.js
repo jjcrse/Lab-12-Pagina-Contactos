@@ -1,11 +1,9 @@
-// Cargar los contactos desde localStorage al iniciar la página
 document.addEventListener('DOMContentLoaded', loadContacts);
 
 const contactForm = document.getElementById('contact-form');
 const contactList = document.getElementById('contact-list');
 let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
 
-// Función para cargar los contactos en la interfaz
 function loadContacts() {
     contactList.innerHTML = '';
     contacts.forEach((contact, index) => {
@@ -23,7 +21,6 @@ function loadContacts() {
     });
 }
 
-// Función para agregar un nuevo contacto
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -41,12 +38,10 @@ contactForm.addEventListener('submit', (e) => {
     contacts.push(newContact);
     localStorage.setItem('contacts', JSON.stringify(contacts));
 
-    // Limpiar el formulario y recargar los contactos
     contactForm.reset();
     loadContacts();
 });
 
-// Función para editar un contacto
 function editContact(index) {
     const contact = contacts[index];
     
@@ -55,11 +50,9 @@ function editContact(index) {
     document.getElementById('email').value = contact.email;
     document.getElementById('address').value = contact.address;
     
-    // Cambiar el texto del botón para "Actualizar"
     const submitButton = document.getElementById('submit-button');
     submitButton.textContent = 'Actualizar Contacto';
     
-    // Cambiar la función del submit para actualizar el contacto
     contactForm.onsubmit = function (e) {
         e.preventDefault();
         
@@ -77,7 +70,6 @@ function editContact(index) {
     };
 }
 
-// Función para eliminar un contacto
 function deleteContact(index) {
     contacts.splice(index, 1);
     localStorage.setItem('contacts', JSON.stringify(contacts));
