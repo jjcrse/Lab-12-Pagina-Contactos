@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Contactos</title>
+    <link rel="stylesheet" href="./Css aplicacion web.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Gestión de Contactos</h1>
+        
+        <!-- Formulario para agregar o editar contactos -->
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Nombre" required>
+            <input type="tel" id="phone" placeholder="Teléfono" required>
+            <input type="email" id="email" placeholder="Correo Electrónico" required>
+            <input type="text" id="address" placeholder="Dirección" required>
+            <button type="submit" id="submit-button">Agregar Contacto</button>
+        </form>
+
+        <!-- Contenedor para mostrar los contactos -->
+        <div id="contact-list"></div>
+    </div>
+
+    <script src="./Js aplicacion web.js"></script>
+</body>
+</html>
